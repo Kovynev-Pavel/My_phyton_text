@@ -1,4 +1,8 @@
 class Checker():
+    def write_words(self, slovo):
+        f = open("pon3.txt", "a")
+        f.write(slovo)
+        f.close()
     def chek(self, text):
         f = open("pon3.txt", "r")
         bad_words = f.read()
@@ -17,9 +21,7 @@ class Checker():
         splitted_text = text.split()
         for word in splitted_text:
             if word in bad_words:
-                print(True)
-            else:
-                print(False)
-        f.close()
-checker = Checker()
-checker.chek("Я сделал папе сливу, я молодец")
+                return True
+        f.close()        
+        return False
+       
